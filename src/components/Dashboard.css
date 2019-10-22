@@ -1,0 +1,9 @@
+main {
+  padding: 10px;
+}
+
+.profile-card > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url("https://placekitten.com/g/400/200") center / cover;
+}

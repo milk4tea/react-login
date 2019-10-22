@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { signIn, signOut } from "../actions";
+import history from "../history";
 
 class GoogleAuth extends Component {
   componentDidMount() {
@@ -27,12 +28,13 @@ class GoogleAuth extends Component {
     }
   };
 
-  onSignInClick = () => {
+  onSignInClick = e => {
     this.auth.signIn();
   };
 
-  onSignOutClick = () => {
+  onSignOutClick = e => {
     this.auth.signOut();
+    history.push("/");
   };
 
   renderAuthButton() {
@@ -42,12 +44,11 @@ class GoogleAuth extends Component {
       return (
         <>
           <button
-            id="sign-out-btn"
             title="Sign Out"
             onClick={this.onSignOutClick}
-            className="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--accent mdl-js-ripple-effect"
+            className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
           >
-            <i className="material-icons">exit_to_app</i>
+            Sign Out
           </button>
         </>
       );
@@ -58,9 +59,9 @@ class GoogleAuth extends Component {
             id="sign-in-btn"
             title="Sign In"
             onClick={this.onSignInClick}
-            className="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--accent mdl-js-ripple-effect"
+            className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
           >
-            <i className="material-icons">perm_identity</i>
+            Sign In
           </button>
         </>
       );
@@ -73,7 +74,10 @@ class GoogleAuth extends Component {
 }
 
 const mapStateToProps = state => {
-  return { isSignedIn: state.auth.isSignedIn };
+  return {
+    isSignedIn: state.auth.isSignedIn,
+    profile: state.auth.profile
+  };
 };
 export default connect(
   mapStateToProps,

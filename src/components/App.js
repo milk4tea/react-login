@@ -7,6 +7,7 @@ import PostList from "./posts/PostList";
 import PostShow from "./posts/PostShow";
 import Header from "./Header";
 import history from "../history";
+import Dashboard from "./Dashboard";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Header />
         <Switch>
           <Route path="/" exact component={PostList} />
+          <Route path="/dashboard" exact component={Dashboard} />
           <Route path="/post/new" exact component={PostCreate} />
           <Route path="/post/edit/:id" exact component={PostEdit} />
           <Route path="/post/delete/:id" exact component={PostDelete} />
