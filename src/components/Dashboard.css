@@ -2,6 +2,10 @@ main {
   padding: 10px;
 }
 
+.mdl-card.profile-card {
+  width: 100%;
+}
+
 .profile-card > .mdl-card__title {
   color: #fff;
   height: 176px;

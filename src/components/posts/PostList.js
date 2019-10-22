@@ -19,7 +19,7 @@ class PostList extends Component {
           <div className="mdl-card__supporting-text">{post.body}</div>
           <div className="mdl-card__actions mdl-card--border">
             <Link
-              to={`/posts/${post.id}`}
+              to={`/post/${post.id}`}
               className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
             >
               View
