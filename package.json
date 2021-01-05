@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://milk4tea.github.io/react-login",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "lodash": "^4.17.15",
     "material-design-lite": "^1.3.0",
     "react": "^16.10.2",
